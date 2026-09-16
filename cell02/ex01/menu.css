@@ -1,0 +1,58 @@
+body {
+    margin: 0;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: "Playpen Sans", cursive;
+    font-optical-sizing: auto;
+    background-image: url('https://www.paysanbreton.com/sites/default/files/news/2025-06/Club%20sandwich%20SNCF%20Paysan%20Breton_1.webp');
+}
+.box {
+    height: fit-content;
+    width: fit-content;
+    text-align: center;
+    border: 1px solid gray;
+    padding: 48px 60px;   /* บน-ล่าง 48, ซ้าย-ขวา 72 → ปรับเลขเอา */
+    background-color: #FFF5C5;
+    border-radius: 15px;
+}
+
+.title h1 {
+    color: #61614B;
+}
+
+.menu {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+
+.dropmenu {
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background: white;
+    font-family: inherit;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+button {
+    font-family: inherit;
+    margin: 12px;
+    padding: 5px 10px;
+    background: white;
+    border: 1px solid #ccc;
+    padding: 8px 12px;
+    border-radius: 8px;
+}
+
+button:hover {
+    cursor: pointer;
+    border: 1px solid black;
+    transition: 0.25s;
+}
+
