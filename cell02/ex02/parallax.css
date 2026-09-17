@@ -1,0 +1,44 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: "Indie Flower", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.parallax {
+    background-image: url('https://images7.alphacoders.com/129/thumb-1920-1293921.png');
+    height: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+#page1title {
+    background-color: aqua;
+    padding: 10px 20px;
+    font-size: 36px;
+    background-color: black;
+    color: white;
+    font-family: "Indie Flower", cursive;
+    font-weight: 400;
+    font-style: normal;
+    cursor: pointer;
+}
+
+#page2title {
+    background-color: aqua;
+    padding: 10px 20px;
+    font-size: 36px;
+    background-color: black;
+    color: white;
+    font-family: "Indie Flower", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
