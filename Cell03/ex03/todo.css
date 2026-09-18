@@ -1,0 +1,14 @@
+#ft_list {
+  width: 300px;
+  min-height: 150px;
+  border: 2px dashed gray;
+  padding: 10px;
+}
+
+.todo {
+  background: lightyellow;
+  border: 1px solid gray;
+  padding: 10px;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
