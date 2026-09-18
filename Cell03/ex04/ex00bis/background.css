@@ -1,0 +1,51 @@
+.container {
+    display: flex;
+    justify-content: center;
+    height: 93vh;
+    font-family: "Indie Flower", cursive;
+    font-weight: 400;
+    font-style: normal;
+    margin: 0;
+    flex-direction: column;
+}
+
+footer {
+    text-align: end;
+    font-family: "Indie Flower", cursive;
+    font-weight: 400;
+    font-style: normal;
+
+}
+
+
+#mainarticle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#mainarticle h1 {
+    font-size: 40px;
+    margin: 0;
+}
+
+#mainarticle p {
+    font-size: 20px;
+}
+
+#changeColorBtn {
+    font-family: "Indie Flower", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18px;
+    padding: 5px 12px;
+    border: 1px solid gray;
+    background-color: whitesmoke;
+}
+
+#changeColorBtn:hover {
+    transition: 0.25s;
+    background-color: rgba(245, 245, 245, 0.726);
+    border: 1px solid black
+}
