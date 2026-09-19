@@ -1,17 +1,14 @@
-/* ① Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* ② Body */
 body {
     font-family: 'JetBrains Mono', monospace;
     overflow: hidden;
 }
 
-/* ③ โครงแบ่งสองฝั่ง */
 .split {
     display: flex;
     min-height: 100vh;
@@ -26,7 +23,6 @@ body {
     transition: background-color .25s ease;
 }
 
-/* ④ ชุดสีของแต่ละฝั่ง */
 .side-bpaiboon {
     --side-bg: #f5f7fa;
     --side-accent: #1976d2;
@@ -45,7 +41,6 @@ body {
     color: var(--side-text);
 }
 
-/* ⑤ เนื้อหากลางฝั่ง */
 .side-content {
     text-align: center;
     padding: 20px;
@@ -79,7 +74,6 @@ body {
     transition: .25s;
 }
 
-/* ⑥ Hover — มืดลงเฉย ๆ ไม่มีการขยับ */
 .side-bpaiboon:hover {
     background: #e6ebf2;
 }
@@ -97,7 +91,6 @@ body {
     color: #fff;
 }
 
-/* ⑦ ป้ายกลางแบบโปสเตอร์ */
 .split-title {
     position: fixed;
     top: 0;
@@ -121,7 +114,6 @@ body {
     text-shadow: 0 0 12px rgba(0, 0, 0, .6);
 }
 
-/* ⑧ Responsive มือถือ */
 @media (max-width: 768px) {
     body {
         overflow: auto;
