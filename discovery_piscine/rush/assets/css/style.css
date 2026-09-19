@@ -12,6 +12,7 @@ body {
 .split {
     display: flex;
     min-height: 100vh;
+    background: url('../img/neptune.png') center / cover no-repeat;
 }
 
 .side {
@@ -20,28 +21,41 @@ body {
     align-items: center;
     justify-content: center;
     text-decoration: none;
+    position: relative;
+}
+
+.side::before {
+    content: "";
+    position: absolute;
+    inset: 0;
     transition: background-color .25s ease;
 }
 
 .side-bpaiboon {
-    --side-bg: #f5f7fa;
     --side-accent: #1976d2;
     --side-text: #1f2937;
-    --side-muted: #64748b;
-    background: var(--side-bg);
+    --side-muted: #3f4d63;
     color: var(--side-text);
+}
+
+.side-bpaiboon::before {
+    background: rgba(245, 247, 250, .62);
 }
 
 .side-pkusri {
-    --side-bg: #0b1120;
     --side-accent: #60a5fa;
     --side-text: #e2e8f0;
-    --side-muted: #94a3b8;
-    background: var(--side-bg);
+    --side-muted: #b7c4da;
     color: var(--side-text);
 }
 
+.side-pkusri::before {
+    background: rgba(11, 17, 32, .78);
+}
+
 .side-content {
+    position: relative;
+    z-index: 1;
     text-align: center;
     padding: 20px;
 }
@@ -74,12 +88,8 @@ body {
     transition: .25s;
 }
 
-.side-bpaiboon:hover {
-    background: #e6ebf2;
-}
-
-.side-pkusri:hover {
-    background: #060a14;
+.side:hover::before {
+    background-color: rgba(0, 0, 0, .18);
 }
 
 .side:hover h1 {
