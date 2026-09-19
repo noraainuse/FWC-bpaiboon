@@ -20,9 +20,24 @@ html {
 }
 
 @media (max-width: 768px) {
+    .navbar {
+        padding: 0 4%;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .nav-links {
+        gap: 10px;
+    }
+
+    .nav-links a {
+        font-size: 13px;
+    }
+
     .about {
         flex-direction: column-reverse;
-        /* รูปขึ้นบน ข้อความล่าง */
         text-align: center;
         padding: 110px 6% 50px;
         gap: 30px;
@@ -41,10 +56,6 @@ html {
         height: 200px;
     }
 
-    .cards {
-        grid-template-columns: 1fr;
-    }
-
     .nav-links {
         gap: 14px;
     }
@@ -55,6 +66,14 @@ html {
 
     .cards {
         grid-template-columns: 1fr;
+    }
+
+    .project {
+        grid-template-columns: 1fr;
+    }
+
+    .projects {
+        padding: 80px 6%;
     }
 
 
@@ -83,8 +102,11 @@ a {
     text-decoration: none;
 }
 
-#about, #showcase, #projects, #contact {
-  scroll-margin-top: 80px;
+#about,
+#showcase,
+#projects,
+#contact {
+    scroll-margin-top: 80px;
 }
 
 .navbar {
@@ -216,6 +238,7 @@ a {
     background: var(--bg);
     /* สลับพื้นกับ showcase (ขาว) ให้มีจังหวะ */
 }
+
 
 .project {
     display: grid;
