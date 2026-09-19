@@ -19,6 +19,56 @@ html {
     scroll-behavior: smooth;
 }
 
+@media (max-width: 768px) {
+    .about {
+        flex-direction: column-reverse;
+        /* รูปขึ้นบน ข้อความล่าง */
+        text-align: center;
+        padding: 110px 6% 50px;
+        gap: 30px;
+    }
+
+    .about h1 {
+        font-size: 42px;
+    }
+
+    .about-text p {
+        margin: 0 auto;
+    }
+
+    .about-image {
+        width: 200px;
+        height: 200px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-links {
+        gap: 14px;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+
+    .terminal-body {
+        font-size: 13px;
+        padding: 14px 16px;
+    }
+
+    .terminal-title {
+        display: none;
+    }
+
+}
+
 body {
     font-family: "JetBrains Mono", monospace;
     font-optical-sizing: auto;
@@ -33,10 +83,8 @@ a {
     text-decoration: none;
 }
 
-#about,
-#showcase,
-#contact {
-    scroll-margin-top: 80px;
+#about, #showcase, #projects, #contact {
+  scroll-margin-top: 80px;
 }
 
 .navbar {
@@ -109,15 +157,17 @@ a {
     margin-top: 24px;
     padding: 12px 28px;
     border-radius: 6px;
-    background: var(--primary);
-    color: #fff;
+    background: #fff;
+    color: var(--primary);
     font-weight: 600;
-    box-shadow: var(--shadow);
+    /* box-shadow: var(--shadow); */
+    border: 1px solid var(--primary);
     transition: .2s;
 }
 
 .button:hover {
-    background: var(--primary-dark);
+    background: var(--primary);
+    color: #fff;
     transform: translateY(-2px);
     box-shadow: var(--shadow-hover);
 }
@@ -141,4 +191,161 @@ a {
 .showcase {
     padding: 100px 10%;
     background: var(--surface);
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.section-title h2 {
+    font-size: 40px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+/* ===== Projects ===== */
+.projects {
+    padding: 100px 10%;
+    background: var(--bg);
+    /* สลับพื้นกับ showcase (ขาว) ให้มีจังหวะ */
+}
+
+.project {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    /* รูปใหญ่กว่า info นิดหน่อย */
+    gap: 36px;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.project-shot {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: var(--shadow-hover);
+    display: block;
+}
+
+.project-actions {
+    margin-top: 20px;
+}
+
+.terminal {
+    background: #0d1117;
+    /* ดำอมน้ำเงินแบบ GitHub dark */
+    border-radius: 10px;
+    overflow: hidden;
+    /* สำคัญ! ตัดมุม bar ให้โค้งตามกล่อง */
+    box-shadow: var(--shadow);
+    transition: .25s;
+    text-align: left;
+    /* ทับ text-align อื่นถ้ามี */
+}
+
+.terminal:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-hover);
+}
+
+.terminal-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 11px 14px;
+    background: #161b22;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.dot.red {
+    background: #ff5f57;
+}
+
+.dot.yellow {
+    background: #febc2e;
+}
+
+.dot.green {
+    background: #28c840;
+}
+
+.terminal-title {
+    margin-left: 6px;
+    color: #8b949e;
+    font-size: 12.5px;
+    font-family: 'SFMono-Regular', Menlo, Consolas, 'Courier New', monospace;
+}
+
+.terminal-body {
+    padding: 18px 20px;
+    font-family: 'SFMono-Regular', Menlo, Consolas, 'Courier New', monospace;
+    font-size: 14px;
+    line-height: 1.9;
+    color: #c9d1d9;
+}
+
+.terminal-body p {
+    margin: 0;
+}
+
+.prompt {
+    color: #58a6ff;
+}
+
+.contact {
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 10%;
+}
+
+.contact-text {
+    color: var(--muted);
+    margin-bottom: 24px;
+}
+
+.social-links {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.social-links a {
+    padding: 10px 26px;
+    border: 2px solid var(--primary);
+    border-radius: 6px;
+    color: var(--primary);
+    font-weight: 600;
+    transition: .2s;
+}
+
+.social-links a:hover {
+    background: var(--primary);
+    color: #fff;
+}
+
+.footer {
+    background: var(--text);
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+.footer a {
+    color: #9ec5fe;
 }
