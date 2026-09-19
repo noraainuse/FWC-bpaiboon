@@ -172,6 +172,22 @@ a {
     margin-bottom: 16px;
 }
 
+.cursor {
+    display: inline-block;
+    width: 9px;
+    height: 1.1em;
+    background: #3fb950;
+    vertical-align: text-bottom;
+    margin-left: 2px;
+    animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
 .button {
     display: inline-block;
     margin-top: 24px;
