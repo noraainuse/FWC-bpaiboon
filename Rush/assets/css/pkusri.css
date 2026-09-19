@@ -60,11 +60,9 @@ body {
     gap: 80px;
     padding: 120px 10% 80px;
     background:
-        radial-gradient(
-            circle at 80% 30%,
+        radial-gradient(circle at 80% 30%,
             rgba(59, 130, 246, 0.25),
-            transparent 35%
-        );
+            transparent 35%);
 }
 
 .about-text {
