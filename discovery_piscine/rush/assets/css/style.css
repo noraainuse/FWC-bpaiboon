@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'JetBrains Mono', monospace;
+    overflow: hidden;
+    /* หน้านี้สูงเท่าจอพอดี ไม่ต้องเลื่อน */
+}
+
+/* ===== สีของแต่ละฝั่ง — อ้างอิงจาก CSS ของเจ้าของเว็บจริง ===== */
+
+.side-bpaiboon {
+    /* ธีมสว่างของเรา */
+    --side-bg: #f5f7fa;
+    --side-accent: #1976d2;
+    --side-text: #1f2937;
+    --side-muted: #64748b;
+}
+
+.side-pkusri {
+    /* ธีมมืดของเพื่อน */
+    --side-bg: #0b1120;
+    --side-accent: #60a5fa;
+    --side-text: #e2e8f0;
+    --side-muted: #94a3b8;
+}
+
+.split {
+    display: flex;
+    /* สอง <a> เรียงแนวนอน = คนละครึ่งจอ */
+    min-height: 100vh;
+}
+
+.side {
+    flex: 1;
+    /* กินพื้นที่เท่า ๆ กัน */
+    display: flex;
+    align-items: center;
+    /* เนื้อหากึ่งกลางแนวตั้ง */
+    justify-content: center;
+    background: var(--side-bg);
+    color: var(--side-text);
+    text-decoration: none;
+    transition: flex .45s ease;
+    /* ← ความลื่นของ effect ขยาย */
+}
+
+/* ลูกเล่นจากโปสเตอร์: เฉดไล่จาง ๆ ให้ฝั่งไม่แบน */
+.side-bpaiboon {
+    background:
+        radial-gradient(circle at 30% 20%, rgba(25, 118, 210, .10), transparent 55%),
+        var(--side-bg);
+}
+
+.side-pkusri {
+    background:
+        radial-gradient(circle at 70% 20%, rgba(96, 165, 250, .12), transparent 55%),
+        var(--side-bg);
+}
+
+.side-content {
+    text-align: center;
+    padding: 20px;
+}
+
+.side-label {
+    color: var(--side-accent);
+    font-size: 13px;
+    letter-spacing: 4px;
+    font-weight: 700;
+}
+
+.side h1 {
+    font-size: 56px;
+    margin: 12px 0;
+    transition: color .3s;
+}
+
+.side-sub {
+    color: var(--side-muted);
+    margin-bottom: 28px;
+}
+
+.enter {
+    display: inline-block;
+    padding: 10px 26px;
+    border: 2px solid var(--side-accent);
+    border-radius: 6px;
+    color: var(--side-accent);
+    font-weight: 600;
+    transition: .25s;
+}
+
+/* ความมหัศจรรย์ทั้งหมดอยู่ 3 บรรทัดนี้ */
+.side:hover {
+    flex: 1.35;
+}
+
+/* ฝั่งที่ชี้ = ขยายกินที่ฝั่งข้าง ๆ */
+.side:hover h1 {
+    color: var(--side-accent);
+}
+
+.side:hover .enter {
+    background: var(--side-accent);
+    color: #fff;
+}
+
+.split-title {
+    position: fixed;
+    /* ลอยเหนือทุกอย่าง */
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding: 28px 16px 0;
+    pointer-events: none;
+    /* สำคัญ! คลิกทะลุป้ายไปโดนฝั่งล่างได้ปกติ */
+    z-index: 10;
+}
+
+.split-title p {
+    font-size: 12px;
+    letter-spacing: 6px;
+    color: #94a3b8;
+}
+
+.split-title h2 {
+    font-size: 22px;
+    color: #fff;
+    text-shadow: 0 0 12px rgba(0, 0, 0, .6);
+    /* ให้อ่านออกทั้งพื้นสว่างและมืด */
+}
+
+@media (max-width: 768px) {
+  body { overflow: auto; }              /* มือถือต้องเลื่อนได้ */
+
+  .split { flex-direction: column; }    /* บน-ล่าง แทน ซ้าย-ขวา */
+
+  .side { min-height: 50vh; }
+  .side:hover { flex: 1; }              /* ปิด effect ขยายบนจอแคบ */
+
+  .side h1 { font-size: 38px; }
+
+  /* ป้ายกลางเลื่อนตามเนื้อหา ไม่ fixed */
+  .split-title { position: absolute; }
+}
