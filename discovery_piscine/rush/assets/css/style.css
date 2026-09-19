@@ -1,66 +1,51 @@
+/* ① Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* ② Body */
 body {
     font-family: 'JetBrains Mono', monospace;
     overflow: hidden;
-    /* หน้านี้สูงเท่าจอพอดี ไม่ต้องเลื่อน */
 }
 
-/* ===== สีของแต่ละฝั่ง — อ้างอิงจาก CSS ของเจ้าของเว็บจริง ===== */
-
-.side-bpaiboon {
-    /* ธีมสว่างของเรา */
-    --side-bg: #f5f7fa;
-    --side-accent: #1976d2;
-    --side-text: #1f2937;
-    --side-muted: #64748b;
-}
-
-.side-pkusri {
-    /* ธีมมืดของเพื่อน */
-    --side-bg: #0b1120;
-    --side-accent: #60a5fa;
-    --side-text: #e2e8f0;
-    --side-muted: #94a3b8;
-}
-
+/* ③ โครงแบ่งสองฝั่ง */
 .split {
     display: flex;
-    /* สอง <a> เรียงแนวนอน = คนละครึ่งจอ */
     min-height: 100vh;
 }
 
 .side {
     flex: 1;
-    /* กินพื้นที่เท่า ๆ กัน */
     display: flex;
     align-items: center;
-    /* เนื้อหากึ่งกลางแนวตั้ง */
     justify-content: center;
-    background: var(--side-bg);
-    color: var(--side-text);
     text-decoration: none;
-    transition: flex .45s ease;
-    /* ← ความลื่นของ effect ขยาย */
+    transition: background-color .25s ease;
 }
 
-/* ลูกเล่นจากโปสเตอร์: เฉดไล่จาง ๆ ให้ฝั่งไม่แบน */
+/* ④ ชุดสีของแต่ละฝั่ง */
 .side-bpaiboon {
-    background:
-        radial-gradient(circle at 30% 20%, rgba(25, 118, 210, .10), transparent 55%),
-        var(--side-bg);
+    --side-bg: #f5f7fa;
+    --side-accent: #1976d2;
+    --side-text: #1f2937;
+    --side-muted: #64748b;
+    background: var(--side-bg);
+    color: var(--side-text);
 }
 
 .side-pkusri {
-    background:
-        radial-gradient(circle at 70% 20%, rgba(96, 165, 250, .12), transparent 55%),
-        var(--side-bg);
+    --side-bg: #0b1120;
+    --side-accent: #60a5fa;
+    --side-text: #e2e8f0;
+    --side-muted: #94a3b8;
+    background: var(--side-bg);
+    color: var(--side-text);
 }
 
+/* ⑤ เนื้อหากลางฝั่ง */
 .side-content {
     text-align: center;
     padding: 20px;
@@ -76,7 +61,7 @@ body {
 .side h1 {
     font-size: 56px;
     margin: 12px 0;
-    transition: color .3s;
+    transition: color .25s;
 }
 
 .side-sub {
@@ -94,12 +79,15 @@ body {
     transition: .25s;
 }
 
-/* ความมหัศจรรย์ทั้งหมดอยู่ 3 บรรทัดนี้ */
-.side:hover {
-    flex: 1.35;
+/* ⑥ Hover — มืดลงเฉย ๆ ไม่มีการขยับ */
+.side-bpaiboon:hover {
+    background: #e6ebf2;
 }
 
-/* ฝั่งที่ชี้ = ขยายกินที่ฝั่งข้าง ๆ */
+.side-pkusri:hover {
+    background: #060a14;
+}
+
 .side:hover h1 {
     color: var(--side-accent);
 }
@@ -109,16 +97,15 @@ body {
     color: #fff;
 }
 
+/* ⑦ ป้ายกลางแบบโปสเตอร์ */
 .split-title {
     position: fixed;
-    /* ลอยเหนือทุกอย่าง */
     top: 0;
     left: 0;
     right: 0;
     text-align: center;
     padding: 28px 16px 0;
     pointer-events: none;
-    /* สำคัญ! คลิกทะลุป้ายไปโดนฝั่งล่างได้ปกติ */
     z-index: 10;
 }
 
@@ -132,19 +119,27 @@ body {
     font-size: 22px;
     color: #fff;
     text-shadow: 0 0 12px rgba(0, 0, 0, .6);
-    /* ให้อ่านออกทั้งพื้นสว่างและมืด */
 }
 
+/* ⑧ Responsive มือถือ */
 @media (max-width: 768px) {
-  body { overflow: auto; }              /* มือถือต้องเลื่อนได้ */
+    body {
+        overflow: auto;
+    }
 
-  .split { flex-direction: column; }    /* บน-ล่าง แทน ซ้าย-ขวา */
+    .split {
+        flex-direction: column;
+    }
 
-  .side { min-height: 50vh; }
-  .side:hover { flex: 1; }              /* ปิด effect ขยายบนจอแคบ */
+    .side {
+        min-height: 50vh;
+    }
 
-  .side h1 { font-size: 38px; }
+    .side h1 {
+        font-size: 38px;
+    }
 
-  /* ป้ายกลางเลื่อนตามเนื้อหา ไม่ fixed */
-  .split-title { position: absolute; }
+    .split-title {
+        position: absolute;
+    }
 }

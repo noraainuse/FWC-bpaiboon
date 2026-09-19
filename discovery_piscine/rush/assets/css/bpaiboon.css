@@ -236,7 +236,6 @@ a {
 .projects {
     padding: 100px 10%;
     background: var(--bg);
-    /* สลับพื้นกับ showcase (ขาว) ให้มีจังหวะ */
 }
 
 
@@ -263,14 +262,11 @@ a {
 
 .terminal {
     background: #0d1117;
-    /* ดำอมน้ำเงินแบบ GitHub dark */
     border-radius: 10px;
     overflow: hidden;
-    /* สำคัญ! ตัดมุม bar ให้โค้งตามกล่อง */
     box-shadow: var(--shadow);
     transition: .25s;
     text-align: left;
-    /* ทับ text-align อื่นถ้ามี */
 }
 
 .terminal:hover {
